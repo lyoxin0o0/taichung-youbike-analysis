@@ -13,8 +13,24 @@
 * 將 API 英文欄位轉為中文
 * 整理日期、車輛數與場站資料
 * 將每次抓取結果追加至 `ubike_history.csv`
-* 記錄資料抓取時間
+* 記錄每次資料抓取時間
 * 保留歷史資料供後續分析使用
+
+## 📊 初步分析結果
+
+### 臺中 YouBike 2.0 行政區缺車率 TOP 10
+
+![臺中 YouBike 2.0 行政區缺車率 TOP 10](docs/images/district-shortage-rate-top10.png)
+
+目前累積 **4 次 YouBike 即時資料觀測**。
+
+初步結果顯示，**新社區缺車率最高，為 12.5%**，其次為 **北區 10.8%**、**東區 10.6%**，太平區與龍井區也皆達到 10% 以上。
+
+缺車率計算方式：
+
+> 缺車率 = 該行政區缺車紀錄數 ÷ 該行政區總觀測紀錄數
+
+> ⚠️ 目前僅累積 4 次觀測資料，樣本數仍少，因此結果僅供初步分析。後續將持續累積資料，以觀察較穩定的供需趨勢。
 
 ## 🔄 資料流程
 
@@ -30,6 +46,10 @@ Pandas DataFrame
 加入抓取時間
     ↓
 ubike_history.csv
+    ↓
+Excel / Python 資料分析
+    ↓
+資料視覺化
 ```
 
 ## 📂 專案結構
@@ -40,13 +60,17 @@ taichung-youbike-analysis/
 ├── data/
 │   └── ubike_history.csv
 │
+├── docs/
+│   └── images/
+│       └── district-shortage-rate-top10.png
+│
 ├── ubike_parser.py
 ├── README.md
 ├── pyproject.toml
 └── uv.lock
 ```
 
-## 📊 主要資料欄位
+## 📋 主要資料欄位
 
 | 欄位      | 說明               |
 | ------- | ---------------- |
@@ -61,16 +85,18 @@ taichung-youbike-analysis/
 
 ## 🛠️ 使用技術
 
-`Python` `Requests` `Pandas` `CSV` `Git` `GitHub`
+`Python` `Requests` `Pandas` `CSV` `Excel` `Git` `GitHub`
 
-## 🚧 後續規劃
+## 🚧 專案進度
 
 * [x] 即時資料取得
 * [x] CSV 歷史資料累積
 * [x] 更新時間紀錄
-* [ ] 缺車 / 滿站分析
-* [ ] 行政區供需分析
+* [x] 行政區缺車率初步分析
+* [x] Excel 資料視覺化
+* [ ] 場站缺車 / 滿站分析
 * [ ] 尖峰時段分析
+* [ ] 平日 / 假日比較
 * [ ] Matplotlib 視覺化
 * [ ] Power BI Dashboard
 
