@@ -10,6 +10,7 @@ response.raise_for_status()
 
 data = response.json()
 
+
 df = pd.DataFrame(data)
 
 # 英文欄位改成中文
