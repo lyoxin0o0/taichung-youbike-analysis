@@ -6,7 +6,7 @@ import os
 url = "https://newdatacenter.taichung.gov.tw/api/v1/no-auth/resource.download?rid=9468c0d0-e1ed-4ecc-a86f-ab5a9fd590ff"
 
 # 取得資料
-response = requests.get(url=url)
+response = requests.get(url=url,verify=False)
 
 # 如果請求失敗就報錯
 response.raise_for_status()
