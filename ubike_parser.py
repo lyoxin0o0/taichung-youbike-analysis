@@ -25,7 +25,7 @@ columns_name = {
     "lat": "緯度",
     "lng": "經度",
     "act": "場站營運狀態",
-    "sbi_detail": "各車種可借數量明細"
+    "sbi_detail": "各車種可借數量明細(一般車,電輔車)"
 }
 
 df.rename(columns=columns_name, inplace=True)
