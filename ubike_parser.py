@@ -3,7 +3,7 @@ import pandas as pd
 import os
 from datetime import datetime
 
-url = "你的 YouBike API 網址"
+url = "	https://newdatacenter.taichung.gov.tw/api/v1/no-auth/resource.download?rid=9468c0d0-e1ed-4ecc-a86f-ab5a9fd590ff"
 
 response = requests.get(url=url, verify=False)
 response.raise_for_status()
