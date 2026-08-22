@@ -89,5 +89,8 @@ print("抓取時間：", datetime.now())
 print("本次資料筆數：", len(df))
 
 history_df = pd.read_csv("data/ubike_history.csv")
+update_count = history_df["抓取時間"].nunique()
+
 print("目前歷史資料總筆數：", len(history_df))
+print("累計更新次數：", update_count)
 print("最新抓取時間：", history_df["抓取時間"].iloc[-1])
